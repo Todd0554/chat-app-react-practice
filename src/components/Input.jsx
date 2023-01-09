@@ -13,7 +13,7 @@ const Input = () => {
   const {data} = useContext(ChatContext)
   const {currentUser} = useContext(AuthContext)
 
-  const [err,setErr] = useState(false)
+  // const [err,setErr] = useState(false)
   const [text,setText] = useState("")
   const [img,setImg] = useState(null)
 
@@ -26,7 +26,8 @@ const Input = () => {
 
       uploadTask.on(
         (error) => {
-          setErr(true)
+          console.log(error)
+          // setErr(true)
           // Handle unsuccessful uploads
         }, 
         () => {

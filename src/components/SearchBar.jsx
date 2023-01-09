@@ -7,7 +7,7 @@ const SearchBar = () => {
 
   const [username, setUsername] = useState("")
   const [user, setUser] = useState(null)
-  const [err, setErr] = useState(false)
+  // const [err, setErr] = useState(false)
 
   const {currentUser} = useContext(AuthContext)
 
@@ -22,7 +22,8 @@ const SearchBar = () => {
         setUser(doc.data())
       });
     } catch (error) {
-      setErr(true)
+      // setErr(true)
+      console.log(error)
     }
     
   }
