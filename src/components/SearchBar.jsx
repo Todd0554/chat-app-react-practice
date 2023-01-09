@@ -65,7 +65,8 @@ const SearchBar = () => {
           })
         }
       } catch (error) {
-        setErr(true)
+        // setErr(true)
+        console.log(error)
       }
     
       setUser(null)
