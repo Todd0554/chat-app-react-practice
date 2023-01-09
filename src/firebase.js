@@ -1,15 +1,20 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getStorage } from "firebase/storage";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD0J0_tUp9YVf8XhoXmwl4oaKVKFxtgwVg",
-  authDomain: "mfchat-aee4a.firebaseapp.com",
-  projectId: "mfchat-aee4a",
-  storageBucket: "mfchat-aee4a.appspot.com",
-  messagingSenderId: "162794448818",
-  appId: "1:162794448818:web:0b32b39170d7ad50bea6ab"
+  apiKey: `${process.env.REACT_APP_API_KEY}`,
+  authDomain: `${process.env.REACT_APP_AUTH_DOMAIN}`,
+  projectId: `${process.env.REACT_APP_PROJECT_ID}`,
+  storageBucket: `${process.env.REACT_APP_STORAGE_BUCKET}`,
+  messagingSenderId: `${process.env.REACT_APP_MESSAGING_SENDER_ID}`,
+  appId: `${process.env.REACT_APP_APP_ID}`,
+  measurementId: `${process.env.REACT_APP_MEASUREMENT_ID}`
 };
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
-export const auth = getAuth()
+export const auth = getAuth();
+export const storage = getStorage();
+export const db = getFirestore();
